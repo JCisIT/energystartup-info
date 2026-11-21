@@ -65,6 +65,16 @@ The six big figures and the electricity mix bar. Each has a `source` and `url`. 
 
 Each route is `from` and `to` as `[longitude, latitude]`, with `kind` set to `oil`, `coal` or `lng`. These are illustrative corridors, not measured flows.
 
+## Share card
+
+`og.png` is the picture that appears when someone shares a link to the site. It is a snapshot of `og.html`. To change the wording, edit `og.html` (and the matching `og:title` / `og:description` tags at the top of `index.html`), then re-take the picture with the local server running:
+
+```
+chrome --headless=new --hide-scrollbars --force-device-scale-factor=1 --window-size=1200,630 --virtual-time-budget=9000 --screenshot=og.png http://localhost:8082/og.html
+```
+
+Apps cache link previews, so a link already shared may keep showing the old card for a while.
+
 ## Where things are
 
 | File | What it does |

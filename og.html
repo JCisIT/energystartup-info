@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <title>Share card source</title>
+  <!-- This page is only the source for og.png, the picture shown when the site's link is shared.
+       To regenerate it, see "Share card" in README.md. -->
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    html, body { width: 1200px; height: 630px; margin: 0; overflow: hidden; background: #020202; display: block; }
+    #globe { position: absolute; inset: -105px -150px auto auto; width: 840px; height: 840px; cursor: default; }
+    .copy { position: absolute; left: 64px; top: 0; bottom: 0; width: 600px; display: flex; flex-direction: column; justify-content: center; }
+    .brand { font: 700 22px var(--mono); color: #f3efeb; }
+    .brand i { font-style: normal; color: var(--mint); margin-right: 12px; }
+    .brand span { color: var(--dim); }
+    h1 { margin: 34px 0 26px; font: 400 76px/1.02 var(--serif); letter-spacing: -0.01em; color: #f3efeb; }
+    h1 em { color: var(--mint); }
+    p { margin: 0; font: 400 19px/1.55 var(--mono); color: var(--text); max-width: 520px; }
+    .frame { position: absolute; inset: 22px; border: 1px solid var(--line); pointer-events: none; }
+    .frame::before, .frame::after { content: ""; position: absolute; width: 16px; height: 16px; border: 1px solid var(--mint); }
+    .frame::before { top: -1px; left: -1px; border-right: 0; border-bottom: 0; }
+    .frame::after { bottom: -1px; right: -1px; border-left: 0; border-top: 0; }
+    .shade { position: absolute; inset: 0; background: linear-gradient(90deg, #020202 44%, rgba(2, 2, 2, 0) 66%); }
+  </style>
+</head>
+<body>
+  <canvas id="globe"></canvas>
+  <div class="shade"></div>
+  <div class="frame"></div>
+  <div class="copy">
+    <div class="brand"><i>▲</i>energystartup<span>.info</span></div>
+    <h1>Mission control for the <em>next energy system.</em></h1>
+    <p>Fusion. Fission. Geothermal. Storage. The startups rewiring the planet, tracked against the system they aim to replace.</p>
+  </div>
+  <script src="js/globe.js"></script>
+  <script>
+    Promise.all(['startups', 'routes'].map((n) => fetch(`data/${n}.json`).then((r) => r.json())))
+      .then(([nodes, routes]) => createGlobe(document.getElementById('globe'), { routes, nodes, lon: 48, spin: false }).setEra(0.62));
+  </script>
+</body>
+</html>

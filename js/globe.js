@@ -1,7 +1,8 @@
 // Translucent dotted globe on a 2D canvas.
 // Legacy fuel routes run in amber; tracked startups glow in mint.
 // setEra(0..1) fades one system out and the other in.
-function createGlobe(canvas, { routes, nodes, onHover, onPick }) {
+// lon sets the longitude facing the viewer at start; spin: false holds it there.
+function createGlobe(canvas, { routes, nodes, onHover, onPick, lon = 62, spin = true }) {
   const LAND_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/land-110m.json';
   // Colours come from the stylesheet so a palette change only touches CSS.
   const css = getComputedStyle(document.documentElement);
@@ -13,7 +14,7 @@ function createGlobe(canvas, { routes, nodes, onHover, onPick }) {
   const D2R = Math.PI / 180;
 
   let W = 0, H = 0, R = 0, cx = 0, cy = 0;
-  let rot = -62 * D2R, tilt = 0.32, era = 0.5;
+  let rot = -lon * D2R, tilt = 0.32, era = 0.5;
   let dragging = false, lastX = 0, lastY = 0, idleUntil = 0, hovered = null;
   let land = [];
 
@@ -165,7 +166,7 @@ function createGlobe(canvas, { routes, nodes, onHover, onPick }) {
     requestAnimationFrame(frame);
     if (document.hidden || !W) return;
     const time = reduce ? 3 : ms / 1000;
-    if (!reduce && !dragging && ms > idleUntil) rot += 0.0011;
+    if (spin && !reduce && !dragging && ms > idleUntil) rot += 0.0011;
     cr = Math.cos(rot); sr = Math.sin(rot); ct = Math.cos(tilt); st = Math.sin(tilt);
 
     const legacy = 1 - 0.9 * era, next = 0.1 + 0.9 * era;
