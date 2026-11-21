@@ -78,6 +78,8 @@ const ES = (() => {
     const canvas = document.getElementById('rain');
     if (!canvas || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     const ctx = canvas.getContext('2d');
+    const css = getComputedStyle(document.documentElement);
+    const bg = css.getPropertyValue('--g-bg'), glow = css.getPropertyValue('--g-rain'), spark = css.getPropertyValue('--g-oil');
     const glyphs = 'アカサタナハマヤラワ0123456789ΔΣΩµ⚡HeLiUThPu'.split('');
     const size = 16;
     let cols = [];
@@ -88,12 +90,12 @@ const ES = (() => {
     resize(); addEventListener('resize', resize);
     setInterval(() => {
       if (document.hidden) return;
-      ctx.fillStyle = 'rgba(6, 9, 11, 0.16)';
+      ctx.fillStyle = `rgba(${bg}, 0.16)`;
       ctx.fillRect(0, 0, canvas.width, canvas.height);
       ctx.font = `${size - 3}px "JetBrains Mono", monospace`;
       cols.forEach((y, i) => {
         if (i % 2) return; // every other column, to keep it sparse
-        ctx.fillStyle = Math.random() < 0.04 ? 'rgba(255, 179, 71, 0.9)' : 'rgba(109, 255, 181, 0.75)';
+        ctx.fillStyle = Math.random() < 0.04 ? `rgba(${spark}, 0.9)` : `rgba(${glow}, 0.75)`;
         ctx.fillText(glyphs[(Math.random() * glyphs.length) | 0], i * size, y * size);
         cols[i] = y * size > canvas.height && Math.random() > 0.975 ? 0 : y + 1;
       });

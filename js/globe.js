@@ -3,7 +3,11 @@
 // setEra(0..1) fades one system out and the other in.
 function createGlobe(canvas, { routes, nodes, onHover, onPick }) {
   const LAND_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/land-110m.json';
-  const COLORS = { oil: [255, 179, 71], coal: [255, 122, 69], lng: [255, 224, 138], link: [109, 255, 181] };
+  // Colours come from the stylesheet so a palette change only touches CSS.
+  const css = getComputedStyle(document.documentElement);
+  const trip = (name) => css.getPropertyValue(name).split(',').map(Number);
+  const COLORS = { oil: trip('--g-oil'), coal: trip('--g-coal'), lng: trip('--g-lng'), link: trip('--g-node') };
+  const OLD = trip('--g-old'), NEW = trip('--g-new'), BG = trip('--g-bg');
   const ctx = canvas.getContext('2d');
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const D2R = Math.PI / 180;
@@ -165,7 +169,7 @@ function createGlobe(canvas, { routes, nodes, onHover, onPick }) {
     cr = Math.cos(rot); sr = Math.sin(rot); ct = Math.cos(tilt); st = Math.sin(tilt);
 
     const legacy = 1 - 0.9 * era, next = 0.1 + 0.9 * era;
-    const tone = mix([214, 176, 128], [120, 226, 184], era);
+    const tone = mix(OLD, NEW, era);
 
     ctx.clearRect(0, 0, W, H);
 
@@ -174,7 +178,7 @@ function createGlobe(canvas, { routes, nodes, onHover, onPick }) {
     g.addColorStop(0, rgba(tone, 0.2)); g.addColorStop(1, rgba(tone, 0));
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R * 1.32, 0, 7); ctx.fill();
     g = ctx.createRadialGradient(cx - R * 0.35, cy - R * 0.4, R * 0.1, cx, cy, R);
-    g.addColorStop(0, 'rgba(26, 46, 42, 0.5)'); g.addColorStop(1, 'rgba(4, 8, 9, 0.82)');
+    g.addColorStop(0, rgba(mix(BG, tone, 0.2), 0.5)); g.addColorStop(1, rgba(BG, 0.82));
     ctx.fillStyle = g; ctx.beginPath(); ctx.arc(cx, cy, R, 0, 7); ctx.fill();
 
     // Far side first, so it reads as seen through glass.
