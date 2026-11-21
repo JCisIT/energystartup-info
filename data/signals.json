@@ -1,0 +1,56 @@
+[
+  {
+    "date": "2026-11-19",
+    "sector": "nuclear",
+    "company": "zeno-power",
+    "title": "Zeno Power runs a two-week underwater generator test in Washington waters",
+    "summary": "An electrically heated Stirling generator produced over 20 watts on the seabed. Later units are meant to run on strontium-90 decay heat instead.",
+    "source": "GeekWire",
+    "url": "https://geekwire.com/2026/zeno-power-underwater-power-system-nuclear"
+  },
+  {
+    "date": "2026-11-18",
+    "sector": "geothermal",
+    "company": "fervo-energy",
+    "title": "Fervo signs a transmission agreement with Longroad Energy for 105 MW at Cape Station",
+    "summary": "The deal secures a path to the grid for part of Fervo's flagship enhanced geothermal project in Utah.",
+    "source": "Fervo Energy",
+    "url": "https://fervoenergy.com/"
+  },
+  {
+    "date": "2026-11-16",
+    "sector": "geothermal",
+    "company": "bedrock-energy",
+    "title": "Bedrock Energy raises $24M to build more autonomous geothermal drill rigs",
+    "summary": "The Series B funds rigs that drill ground-source heating and cooling fields for large buildings.",
+    "source": "TechCrunch",
+    "url": "https://techcrunch.com/2026/11/16/bedrock-energy-raises-24m-to-build-more-ai-enabled-geothermal-drill-rigs-for-enterprise-buildings/"
+  },
+  {
+    "date": "2026-11-10",
+    "sector": "nuclear",
+    "company": "x-energy",
+    "title": "NRC issues a construction permit for X-energy's Long Mott plant at Dow's Texas site",
+    "summary": "Long Mott is planned as the first US commercial advanced reactor built to supply industrial process heat.",
+    "source": "Wikipedia, citing World Nuclear News",
+    "url": "https://en.wikipedia.org/wiki/Long_Mott_Generating_Station"
+  },
+  {
+    "date": "2026-11",
+    "sector": "geothermal",
+    "company": "quaise-energy",
+    "title": "Google agrees to buy 50 MW from Quaise's superhot geothermal project in Oregon",
+    "summary": "Power from the Newberry Volcano site could arrive as early as 2030. Quaise is still testing the millimeter-wave drilling the plant depends on.",
+    "source": "Canary Media",
+    "url": "https://www.canarymedia.com/articles/geothermal/google-superhot-geothermal-oregon-data-centers"
+  },
+  {
+    "date": "2026-02-13",
+    "sector": "fusion",
+    "company": "helion",
+    "title": "Helion's Polaris machine reaches 150 million °C on deuterium-tritium fuel",
+    "summary": "A step toward the plant Helion has promised will sell electricity to Microsoft starting in 2028.",
+    "source": "TechCrunch",
+    "url": "https://techcrunch.com/2026/02/13/fusion-startup-helion-hits-blistering-temps-as-it-races-toward-2028-deadline/"
+  }
+]

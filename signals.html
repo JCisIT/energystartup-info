@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Signals · energystartup.info</title>
+  <meta name="description" content="Announcements, milestones and funding news from the energy startups we track, each linked to its source.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="signals">
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <main class="narrow">
+    <div class="page-head">
+      <h1>Signals <em>from the frontier</em></h1>
+      <p class="dim">Announcements, milestones and funding, newest first. Every item links to where it was reported.</p>
+    </div>
+    <div class="filters">
+      <div class="chips" id="chips"></div>
+      <input id="search" type="search" placeholder="search headlines" aria-label="Search signals">
+      <span id="count" class="dim"></span>
+    </div>
+    <div class="signals" id="list"></div>
+  </main>
+  <script src="js/common.js"></script>
+  <script src="js/lists.js"></script>
+</body>
+</html>

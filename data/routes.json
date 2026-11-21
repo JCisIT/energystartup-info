@@ -1,0 +1,19 @@
+[
+  { "kind": "oil",  "name": "Persian Gulf to China",        "from": [50.2, 26.6],   "to": [121.8, 29.9] },
+  { "kind": "oil",  "name": "Persian Gulf to India",        "from": [50.2, 26.6],   "to": [72.8, 19.0] },
+  { "kind": "oil",  "name": "Persian Gulf to Europe",       "from": [50.2, 26.6],   "to": [4.3, 51.9] },
+  { "kind": "oil",  "name": "Persian Gulf to Japan",        "from": [50.2, 26.6],   "to": [139.7, 35.4] },
+  { "kind": "oil",  "name": "Baltic to India",              "from": [28.6, 60.3],   "to": [70.0, 22.5] },
+  { "kind": "oil",  "name": "US Gulf Coast to Europe",      "from": [-95.0, 29.5],  "to": [4.3, 51.9] },
+  { "kind": "oil",  "name": "West Africa to China",         "from": [13.2, -8.8],   "to": [121.8, 29.9] },
+  { "kind": "oil",  "name": "Brazil to China",              "from": [-46.3, -24.0], "to": [120.4, 36.1] },
+  { "kind": "oil",  "name": "Alberta to US Gulf Coast",     "from": [-113.5, 53.5], "to": [-95.0, 29.5] },
+  { "kind": "coal", "name": "Australia to Japan",           "from": [151.8, -32.9], "to": [139.7, 35.4] },
+  { "kind": "coal", "name": "Australia to China",           "from": [151.8, -32.9], "to": [113.3, 23.1] },
+  { "kind": "coal", "name": "Indonesia to China",           "from": [117.0, -1.0],  "to": [113.3, 23.1] },
+  { "kind": "coal", "name": "Indonesia to India",           "from": [117.0, -1.0],  "to": [80.3, 13.1] },
+  { "kind": "coal", "name": "South Africa to India",        "from": [32.0, -28.8],  "to": [72.8, 19.0] },
+  { "kind": "lng",  "name": "Qatar to South Korea",         "from": [51.5, 25.9],   "to": [126.6, 37.5] },
+  { "kind": "lng",  "name": "US Gulf Coast to UK",          "from": [-93.9, 29.7],  "to": [-5.0, 51.7] },
+  { "kind": "lng",  "name": "Australia to Japan",           "from": [151.3, -23.8], "to": [139.7, 35.4] }
+]

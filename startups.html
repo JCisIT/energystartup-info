@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Startups · energystartup.info</title>
+  <meta name="description" content="The energy startups we track, by sector: what each one is building and where.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="startups">
+  <canvas id="rain" aria-hidden="true"></canvas>
+  <main class="narrow">
+    <div class="page-head">
+      <h1>Startups <em>on the board</em></h1>
+      <p class="dim">Who is building the next energy system, and what each one is betting on.</p>
+    </div>
+    <div class="filters">
+      <div class="chips" id="chips"></div>
+      <input id="search" type="search" placeholder="search name, place, idea" aria-label="Search startups">
+      <span id="count" class="dim"></span>
+    </div>
+    <div class="cards" id="list"></div>
+  </main>
+  <script src="js/common.js"></script>
+  <script src="js/lists.js"></script>
+</body>
+</html>

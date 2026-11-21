@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>energystartup.info: tracking the next energy system</title>
+  <meta name="description" content="A live board of the startups building the next energy system: fusion, advanced nuclear, geothermal, storage and more, set against the system they aim to replace.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="dashboard">
+  <canvas id="rain" aria-hidden="true"></canvas>
+
+  <div class="ticker" aria-label="Latest signals"><div class="ticker-track" id="ticker"></div></div>
+
+  <main>
+    <section class="deck">
+      <aside class="panel legacy">
+        <div class="panel-head"><span>01 // Legacy system</span><span class="amber">running</span></div>
+        <p class="panel-lede">What powers the world today.</p>
+        <div id="legacy-stats"></div>
+      </aside>
+
+      <section class="panel globe-panel">
+        <div class="panel-head"><span>00 // Energy in transit</span><span id="counts" class="dim"></span></div>
+        <h1>The old energy system is still running.<br><em>The next one is being built.</em></h1>
+        <div class="globe-wrap">
+          <canvas id="globe" aria-label="Rotating globe showing fossil fuel trade routes and the locations of tracked energy startups"></canvas>
+          <div id="tip" class="tip" hidden></div>
+        </div>
+        <div class="era">
+          <div class="era-row">
+            <button type="button" data-era="0" class="amber">Legacy</button>
+            <input id="era" type="range" min="0" max="100" value="50" aria-label="Shift the globe between the legacy energy system and the next one">
+            <button type="button" data-era="100" class="mint">Next</button>
+          </div>
+          <p id="era-readout" class="era-readout"></p>
+          <ul class="legend">
+            <li><i class="sw oil"></i>Oil</li>
+            <li><i class="sw coal"></i>Coal</li>
+            <li><i class="sw lng"></i>LNG</li>
+            <li><i class="sw node"></i>Tracked startup</li>
+            <li class="dim">Routes are illustrative of major trade corridors. Drag to rotate.</li>
+          </ul>
+        </div>
+      </section>
+
+      <aside class="panel next">
+        <div class="panel-head"><span>02 // Next system</span><span class="mint">building</span></div>
+        <p class="panel-lede">What is being built to replace it.</p>
+        <div id="next-stats"></div>
+      </aside>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><span>03 // Grid mix</span><span class="dim" id="mix-title"></span></div>
+      <div class="mix-bar" id="mix-bar"></div>
+      <ul class="mix-legend" id="mix-legend"></ul>
+      <p class="src" id="mix-src"></p>
+    </section>
+
+    <section class="pair">
+      <div class="panel">
+        <div class="panel-head"><span>04 // Latest signals</span><a href="signals.html">all signals →</a></div>
+        <ul class="latest" id="latest"></ul>
+      </div>
+      <div class="panel">
+        <div class="panel-head"><span>05 // Key players</span><a href="startups.html">all startups →</a></div>
+        <table class="players"><tbody id="players"></tbody></table>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head"><span>06 // Frontier map</span><span class="dim">startups tracked by sector</span></div>
+      <div class="tiles" id="sectors"></div>
+    </section>
+  </main>
+
+  <script src="js/common.js"></script>
+  <script src="js/globe.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

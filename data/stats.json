@@ -1,0 +1,57 @@
+{
+  "asOf": "2026-11-21",
+  "legacy": [
+    {
+      "value": "86%",
+      "label": "of the world's energy supply still came from oil, gas and coal in 2025",
+      "source": "Energy Institute, Statistical Review 2026",
+      "url": "https://www.energyinst.org/statistical-review"
+    },
+    {
+      "value": "33.0%",
+      "label": "of global electricity from coal in 2025, still the largest single fuel",
+      "source": "Ember, Global Electricity Review 2026",
+      "url": "https://ember-energy.org/latest-insights/global-electricity-review-2026/"
+    },
+    {
+      "value": "$1.2T",
+      "label": "expected to flow into oil, gas and coal supply in 2026",
+      "source": "IEA, World Energy Investment 2026",
+      "url": "https://www.iea.org/reports/world-energy-investment-2026"
+    }
+  ],
+  "next": [
+    {
+      "value": "43%",
+      "label": "of global electricity came from low-carbon sources in 2025",
+      "source": "Ember, Global Electricity Review 2026",
+      "url": "https://ember-energy.org/latest-insights/global-electricity-review-2026/"
+    },
+    {
+      "value": "99%",
+      "label": "of 2025's growth in electricity demand was met by wind and solar alone",
+      "source": "Ember, Global Electricity Review 2026",
+      "url": "https://ember-energy.org/latest-insights/global-electricity-review-2026/"
+    },
+    {
+      "value": "$2.2T",
+      "label": "expected to flow into clean power, grids, storage and efficiency in 2026",
+      "source": "IEA, World Energy Investment 2026",
+      "url": "https://www.iea.org/reports/world-energy-investment-2026"
+    }
+  ],
+  "electricity": {
+    "title": "Global electricity generation by source, 2025",
+    "source": "Ember, Global Electricity Review 2026",
+    "url": "https://ember-energy.org/latest-insights/global-electricity-review-2026/",
+    "note": "Gas + other fossil and hydro + other renewables are derived from Ember's published totals (fossil 57%, renewables 33.8%).",
+    "mix": [
+      { "label": "Coal", "value": 33.0, "kind": "legacy" },
+      { "label": "Gas + other fossil", "value": 24.0, "kind": "legacy" },
+      { "label": "Nuclear", "value": 8.9, "kind": "next" },
+      { "label": "Hydro + other renewables", "value": 16.6, "kind": "next" },
+      { "label": "Wind", "value": 8.5, "kind": "next" },
+      { "label": "Solar", "value": 8.7, "kind": "next" }
+    ]
+  }
+}
