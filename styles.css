@@ -267,3 +267,13 @@ footer { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 24px; pad
 .race-stat b.hot { color: var(--mint); }
 @media (max-width: 760px) { .race-row { grid-template-columns: 1fr; gap: 4px; } }
 .chips button { white-space: nowrap; }
+
+/* Guided tour under the globe */
+.era-readout { margin: 6px 0 12px; min-height: 4.2em; font-size: 14px; line-height: 1.5; }
+.era-readout b { display: block; margin-bottom: 2px; font-size: 11px; letter-spacing: 0.16em; color: var(--mint); }
+.era input[type="range"] { display: block; width: 100%; }
+.era-stops { display: flex; justify-content: space-between; margin: 2px 0 10px; padding: 0 2px; }
+.era-stops button { padding: 2px 0; border: 0; background: none; color: var(--dim); font: inherit; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; }
+.era-stops button:hover { color: var(--text); }
+.story { padding: 2px 9px; border: 1px solid var(--line-strong); background: none; color: var(--mint); font: inherit; font-size: 11px; cursor: pointer; }
+@media (max-width: 720px) { .era-readout { min-height: 6em; } }

@@ -44,18 +44,20 @@
           <div id="tip" class="tip" hidden></div>
         </div>
         <div class="era">
-          <div class="era-row">
-            <button type="button" data-era="0" class="amber">Legacy</button>
-            <input id="era" type="range" min="0" max="100" value="50" aria-label="Shift the globe between the legacy energy system and the next one">
-            <button type="button" data-era="100" class="mint">Next</button>
+          <p id="era-readout" class="era-readout" aria-live="polite"></p>
+          <input id="era" type="range" min="0" max="100" value="0" aria-label="Move between old energy, today and new energy">
+          <div class="era-stops">
+            <button type="button" data-stop="0">Old energy</button>
+            <button type="button" data-stop="1">Today</button>
+            <button type="button" data-stop="2">New energy</button>
           </div>
-          <p id="era-readout" class="era-readout"></p>
           <ul class="legend">
+            <li><button type="button" id="story" class="story">▶ Play tour</button></li>
             <li><i class="sw oil"></i>Oil</li>
             <li><i class="sw coal"></i>Coal</li>
             <li><i class="sw lng"></i>LNG</li>
             <li><i class="sw node"></i>Tracked startup</li>
-            <li class="dim">Routes are illustrative of major trade corridors. Drag to rotate.</li>
+            <li class="dim">Routes are illustrative. Drag the globe or the slider to explore.</li>
           </ul>
         </div>
       </section>

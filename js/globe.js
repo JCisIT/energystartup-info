@@ -2,7 +2,8 @@
 // Legacy fuel routes run in amber; tracked startups glow in mint.
 // setEra(0..1) fades one system out and the other in.
 // lon sets the longitude facing the viewer at start; spin: false holds it there.
-function createGlobe(canvas, { routes, nodes, onHover, onPick, lon = 62, spin = true }) {
+// labels: [{ lon, lat, text, side: 'legacy' | 'next' }] are captions that appear at each end of the era.
+function createGlobe(canvas, { routes, nodes, onHover, onPick, lon = 62, spin = true, labels = [] }) {
   const LAND_URL = 'https://cdn.jsdelivr.net/npm/world-atlas@2.0.2/land-110m.json';
   // Colours come from the stylesheet so a palette change only touches CSS.
   const css = getComputedStyle(document.documentElement);
@@ -17,6 +18,7 @@ function createGlobe(canvas, { routes, nodes, onHover, onPick, lon = 62, spin = 
   let rot = -lon * D2R, tilt = 0.32, era = 0.5;
   let dragging = false, lastX = 0, lastY = 0, idleUntil = 0, hovered = null;
   let land = [];
+  let target = null, drift = 0.0011;
 
   const rgba = (c, a) => `rgba(${c[0]},${c[1]},${c[2]},${Math.max(0, Math.min(1, a)).toFixed(3)})`;
   const mix = (a, b, t) => a.map((v, i) => Math.round(v + (b[i] - v) * t));
@@ -72,6 +74,8 @@ function createGlobe(canvas, { routes, nodes, onHover, onPick, lon = 62, spin = 
         links.push(makeLine('link', p.v, points[j].v, 20, links.length));
       });
   });
+
+  const marks = labels.map((l) => ({ ...l, text: l.text.toUpperCase(), v: vec(l.lon, l.lat), color: l.side === 'legacy' ? COLORS.oil : COLORS.link }));
 
   // Graticule: meridians and parallels every 30 degrees.
   const grat = [];
@@ -166,7 +170,13 @@ function createGlobe(canvas, { routes, nodes, onHover, onPick, lon = 62, spin = 
     requestAnimationFrame(frame);
     if (document.hidden || !W) return;
     const time = reduce ? 3 : ms / 1000;
-    if (spin && !reduce && !dragging && ms > idleUntil) rot += 0.0011;
+    if (target !== null && !dragging) {
+      // Ease toward the requested longitude by the shortest way round.
+      let d = (target - rot) % (2 * Math.PI);
+      if (d > Math.PI) d -= 2 * Math.PI; else if (d < -Math.PI) d += 2 * Math.PI;
+      rot += d * 0.035;
+      if (Math.abs(d) < 0.002) target = null;
+    } else if (spin && !reduce && !dragging && ms > idleUntil) rot += drift;
     cr = Math.cos(rot); sr = Math.sin(rot); ct = Math.cos(tilt); st = Math.sin(tilt);
 
     const legacy = 1 - 0.9 * era, next = 0.1 + 0.9 * era;
@@ -221,6 +231,28 @@ function createGlobe(canvas, { routes, nodes, onHover, onPick, lon = 62, spin = 
       ctx.beginPath(); ctx.arc(p.scr[0], p.scr[1], 2 + pulse * (5 + next * 9), 0, 7); ctx.stroke();
     });
     ctx.globalCompositeOperation = 'source-over';
+
+    // Captions: fuel hubs at the legacy end, startup clusters at the next end.
+    ctx.font = '500 10px "JetBrains Mono", monospace';
+    ctx.textBaseline = 'middle';
+    marks.forEach((m) => {
+      project(m.v, tmp);
+      const gain = m.side === 'legacy' ? legacy : next;
+      const a = Math.max(0, Math.min(1, (gain - 0.6) * 2.5)) * Math.max(0, Math.min(1, (tmp[2] - 0.2) * 4));
+      if (a <= 0.02) return;
+      const right = tmp[0] >= cx, dir = right ? 1 : -1;
+      const x = tmp[0], y = tmp[1], ex = x + dir * 14, ey = y - 12;
+      ctx.strokeStyle = rgba(m.color, a * 0.8); ctx.lineWidth = 1;
+      ctx.beginPath(); ctx.moveTo(x, y); ctx.lineTo(ex, ey); ctx.lineTo(ex + dir * 6, ey); ctx.stroke();
+      const w = ctx.measureText(m.text).width;
+      // Keep the caption inside the canvas on narrow screens.
+      const tx = right ? Math.min(ex + 10, W - w - 6) : Math.max(ex - 10, w + 6);
+      ctx.fillStyle = rgba(BG, a * 0.8);
+      ctx.fillRect(right ? tx - 4 : tx - w - 4, ey - 8, w + 8, 16);
+      ctx.textAlign = right ? 'left' : 'right';
+      ctx.fillStyle = rgba(m.side === 'legacy' ? [236, 231, 226] : COLORS.link, a);
+      ctx.fillText(m.text, tx, ey);
+    });
   }
   requestAnimationFrame(frame);
 
@@ -236,7 +268,7 @@ function createGlobe(canvas, { routes, nodes, onHover, onPick, lon = 62, spin = 
     return best;
   }
   let moved = 0;
-  canvas.addEventListener('pointerdown', (e) => { dragging = true; moved = 0; lastX = e.clientX; lastY = e.clientY; canvas.setPointerCapture(e.pointerId); });
+  canvas.addEventListener('pointerdown', (e) => { target = null; dragging = true; moved = 0; lastX = e.clientX; lastY = e.clientY; canvas.setPointerCapture(e.pointerId); });
   canvas.addEventListener('pointermove', (e) => {
     if (dragging) {
       const dx = e.clientX - lastX, dy = e.clientY - lastY;
@@ -260,5 +292,10 @@ function createGlobe(canvas, { routes, nodes, onHover, onPick, lon = 62, spin = 
   canvas.addEventListener('pointercancel', () => { dragging = false; });
   canvas.addEventListener('pointerleave', () => { if (hovered) { hovered = null; if (onHover) onHover(null); } });
 
-  return { setEra(t) { era = Math.max(0, Math.min(1, t)); } };
+  return {
+    setEra(t) { era = Math.max(0, Math.min(1, t)); },
+    // Turn the globe so this longitude faces the viewer.
+    flyTo(deg) { if (reduce) rot = -deg * D2R; else target = -deg * D2R; },
+    setDrift(v) { drift = v; },
+  };
 }
