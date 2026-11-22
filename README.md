@@ -53,6 +53,21 @@ Everything you would normally change lives in `data/`. Edit a file, save, refres
 - The first eight entries in the file are the "Key players" shown on the dashboard, so order matters at the top.
 - `sector` must be one of: `fusion`, `nuclear`, `geothermal`, `storage`, `grid`, `hydrogen`, `industry`, `solar`. To add a sector, add it to `SECTORS` at the top of `js/common.js`.
 
+### Move a company along the race: `data/race.json`
+
+The race page (`race.html`) has two tracks, fusion and advanced nuclear, each with five stages. For each company, `reached` is how many stages it has completed, in order. When a company hits its next stage:
+
+1. Add 1 to its `reached`.
+2. Add a milestone to its `milestones` list:
+
+```json
+{ "stage": 3, "date": "2026-11-09", "text": "What happened, in one sentence.", "source": "NRC", "url": "https://link-to-the-proof" }
+```
+
+3. Update `target` and `targetYear` if its next goal has changed, and set `asOf` at the top of the file to today's date.
+
+Only move a company forward when a primary source or a major outlet says it actually happened. Plans and targets don't count. The scoreboard numbers on the race page and the dashboard are calculated from this file automatically.
+
 ### Update the headline numbers: `data/stats.json`
 
 The six big figures and the electricity mix bar. Each has a `source` and `url`. These reports come out yearly:

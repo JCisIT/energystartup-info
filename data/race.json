@@ -1,0 +1,232 @@
+{
+  "asOf": "2026-11-21",
+  "tracks": [
+    {
+      "id": "fusion",
+      "title": "Fusion",
+      "headlineStart": "The race",
+      "headlineEnd": "to fusion power",
+      "intro": "Who has built a machine, who has made plasma, and who is closest to putting fusion electricity on the grid.",
+      "stages": ["Machine built", "First plasma", "Breakeven", "Net power", "On the grid"],
+      "tally": [
+        { "stage": 2, "label": "machines have made plasma" },
+        { "stage": 3, "label": "past scientific breakeven" },
+        { "stage": 5, "label": "putting power on the grid" }
+      ],
+      "note": "For reference: a US government lab, the National Ignition Facility, reached ignition in December 2022, getting more fusion energy out of its target than its lasers delivered. Counting the power those lasers drew, it was still far from net energy. No private company has passed breakeven yet.",
+      "noteUrl": "https://lasers.llnl.gov/science/pursuit-of-ignition",
+      "companies": [
+        {
+          "name": "Helion", "startup": "helion", "project": "Polaris", "location": "Everett, WA",
+          "reached": 2,
+          "milestones": [
+            { "stage": 1, "date": "2024", "text": "Finished building Polaris, its seventh prototype.", "source": "Helion", "url": "https://helionenergy.com/newsroom/helion-achieves-new-fusion-energy-milestones" },
+            { "stage": 2, "date": "2026-02-13", "text": "Reported 150 million °C plasmas and measured deuterium-tritium fusion, a first for a private machine.", "source": "Helion", "url": "https://helionenergy.com/newsroom/helion-achieves-new-fusion-energy-milestones" }
+          ],
+          "target": "First power to Microsoft", "targetYear": "2028",
+          "targetUrl": "https://fortune.com/2026/02/13/sam-altman-fusion-helion-energy-milestone-doubters-grid-power-2028/", "targetSource": "Fortune",
+          "note": "The power plant, Orion, has been under construction in Malaga, WA since July 2025. In September 2026 Helion stopped aiming for net electricity from Polaris, according to Axios."
+        },
+        {
+          "name": "TAE Technologies", "startup": "tae-technologies", "project": "Norm", "location": "Foothill Ranch, CA",
+          "reached": 2,
+          "milestones": [
+            { "stage": 1, "date": "2017-07", "text": "Switched on Norman, the machine it has since rebuilt as Norm.", "source": "PR Newswire", "url": "https://prnewswire.com/news-releases/tri-alpha-energy-achieves-first-plasma-in-worlds-most-advanced-plasma-generator-300484827.html" },
+            { "stage": 2, "date": "2017-07", "text": "First plasma in Norman.", "source": "PR Newswire", "url": "https://prnewswire.com/news-releases/tri-alpha-energy-achieves-first-plasma-in-worlds-most-advanced-plasma-generator-300484827.html" }
+          ],
+          "target": "Fusion power from its Da Vinci plant", "targetYear": "2031",
+          "targetUrl": "https://tae.com/august-6-2026/", "targetSource": "TAE",
+          "note": "TAE cancelled its planned Copernicus machine in November 2025. Its merger with Trump Media had not closed as of November 2026."
+        },
+        {
+          "name": "General Fusion", "startup": "general-fusion", "project": "LM26", "location": "Richmond, BC",
+          "reached": 2,
+          "milestones": [
+            { "stage": 1, "date": "2024", "text": "Finished assembling LM26.", "source": "General Fusion", "url": "https://generalfusion.com/post/general-fusions-made-in-canada-technology-achieves-first-plasma-in-cutting-edge-fusion-demonstration-machine/" },
+            { "stage": 2, "date": "2025-02", "text": "First plasma in LM26, announced in March 2025.", "source": "TechCrunch", "url": "https://techcrunch.com/2025/03/11/general-fusion-fires-up-its-newest-steampunk-fusion-reactor" }
+          ],
+          "target": "Net fusion energy", "targetYear": "2028",
+          "targetUrl": "https://www.ans.org/news/2026-10-09/article-8478/general-fusion-reports-electron-temperatures-exceeding-1-kev/", "targetSource": "ANS",
+          "note": "After layoffs in 2025, it went public through a SPAC merger in 2026."
+        },
+        {
+          "name": "Zap Energy", "startup": "zap-energy", "project": "FuZE-Q", "location": "Everett, WA",
+          "reached": 2,
+          "milestones": [
+            { "stage": 1, "date": "2022-06", "text": "Commissioned FuZE-Q.", "source": "Zap Energy", "url": "https://legacy.zapenergy.com/news/first-plasmas-fuzeq-series-c" },
+            { "stage": 2, "date": "2022-06", "text": "First plasmas in FuZE-Q.", "source": "Zap Energy", "url": "https://legacy.zapenergy.com/news/first-plasmas-fuzeq-series-c" }
+          ],
+          "target": "Scientific breakeven", "targetYear": "no date given",
+          "note": "Its newer FuZE-3 device passed gigapascal plasma pressures in November 2025. In April 2026 Zap added a fission strategy and named a new CEO."
+        },
+        {
+          "name": "Tokamak Energy", "startup": "tokamak-energy", "project": "ST40", "location": "Oxfordshire, UK",
+          "reached": 2,
+          "milestones": [
+            { "stage": 1, "date": "2017-04", "text": "Switched on ST40.", "source": "World Nuclear News", "url": "https://world-nuclear-news.org/Articles/Tokamak-Energy-turns-on-ST40-fusion-reactor" },
+            { "stage": 2, "date": "2017-04", "text": "First plasma in ST40. It reached 100 million °C in 2022.", "source": "World Nuclear News", "url": "https://world-nuclear-news.org/Articles/Tokamak-Energy-turns-on-ST40-fusion-reactor" }
+          ],
+          "target": "Fusion energy", "targetYear": "early 2030s",
+          "targetUrl": "https://www.ans.org/news/article-4447/tokamak-energy-bets-its-spherical-design-will-deliver-fusion-energy-in-the-early-2030s", "targetSource": "ANS",
+          "note": "ST40 has been offline for a major upgrade since late 2025."
+        },
+        {
+          "name": "Energy Singularity", "startup": "energy-singularity", "project": "HH70", "location": "Shanghai",
+          "reached": 2,
+          "milestones": [
+            { "stage": 1, "date": "2024-02", "text": "Finished HH70, a tokamak whose magnets are all high-temperature superconductors.", "source": "Energy Singularity", "url": "https://energysingularity.cn/en/devices.html" },
+            { "stage": 2, "date": "2024-06", "text": "First plasma in HH70.", "source": "Shanghai government", "url": "https://english.shanghai.gov.cn/en-Latest-WhatsNew/20240621/282f58e13a1c4b9797beaa31c2309f41.html" }
+          ],
+          "target": "Build its larger HH170", "targetYear": "no date given",
+          "targetUrl": "https://energysingularity.cn/en/devices.html", "targetSource": "Energy Singularity"
+        },
+        {
+          "name": "Commonwealth Fusion Systems", "startup": "commonwealth-fusion", "project": "SPARC", "location": "Devens, MA",
+          "reached": 0,
+          "milestones": [],
+          "target": "Switch on SPARC, then breakeven", "targetYear": "2027",
+          "targetUrl": "https://blog.cfs.energy/how-cfs-will-rev-up-our-sparc-tokamak-for-its-q1-fusion-moment/", "targetSource": "CFS",
+          "note": "SPARC was about 80% complete in mid-2026 and is still being assembled."
+        },
+        {
+          "name": "Type One Energy", "startup": "type-one-energy", "project": "Infinity One", "location": "Bull Run, TN",
+          "reached": 0,
+          "milestones": [],
+          "target": "Commission Infinity One", "targetYear": "~2029",
+          "targetUrl": "https://wnn.world-nuclear.org/articles/tva-signs-up-for-type-one-energy-fusion-plant", "targetSource": "World Nuclear News",
+          "note": "Tennessee issued the first commercial fusion licence for its Bull Run site in August 2026."
+        },
+        {
+          "name": "Proxima Fusion", "startup": "proxima-fusion", "project": "Alpha", "location": "Munich",
+          "reached": 0,
+          "milestones": [],
+          "target": "Breakeven from its Alpha stellarator", "targetYear": "early 2030s",
+          "targetUrl": "https://proximafusion.com/program/alpha", "targetSource": "Proxima Fusion"
+        },
+        {
+          "name": "Pacific Fusion", "startup": "pacific-fusion", "project": "Demonstration system", "location": "Albuquerque, NM",
+          "reached": 0,
+          "milestones": [],
+          "target": "Net facility gain", "targetYear": "2030",
+          "targetUrl": "https://www.ans.org/news/2025-04-15/article-6938/pacific-fusion-predicts-1000fold-leap-in-performance-net-facility-gain-by-2030/", "targetSource": "ANS",
+          "note": "Broke ground on its demonstration facility in August 2026."
+        }
+      ]
+    },
+    {
+      "id": "nuclear",
+      "title": "Advanced nuclear",
+      "headlineStart": "The race",
+      "headlineEnd": "to next-generation nuclear",
+      "intro": "Smaller, newer reactor designs, from licence to first power. Who is approved, who is building, and whose reactor has gone critical.",
+      "stages": ["Licence applied", "Approved to build", "Under construction", "Reactor critical", "Delivering power"],
+      "tally": [
+        { "stage": 4, "label": "reactors have gone critical" },
+        { "stage": 3, "label": "projects have started construction" },
+        { "stage": 5, "label": "delivering power to customers" }
+      ],
+      "note": "Test reactors in the Department of Energy's pilot program are approved by DOE rather than the NRC, so for them DOE's safety approvals stand in for the licence steps. DOE's goal of at least three pilot reactors going critical by July 4, 2026 was met.",
+      "noteUrl": "https://www.energy.gov/articles/department-energy-celebrates-fourth-criticality-ahead-july-4th-goal",
+      "companies": [
+        {
+          "name": "Valar Atomics", "startup": "valar-atomics", "project": "Ward 250", "location": "near Orangeville, UT",
+          "reached": 4,
+          "milestones": [
+            { "stage": 3, "date": "2025-09", "text": "Broke ground at the Utah San Rafael Energy Lab.", "source": "ANS", "url": "https://www.ans.org/news/2025-09-25/article-7408/valar-atomics-breaks-ground-in-utah" },
+            { "stage": 4, "date": "2026-06-18", "text": "Ward 250 went critical under DOE's pilot program.", "source": "DOE", "url": "https://www.energy.gov/node/4859111" }
+          ],
+          "target": "First reactors at its Project Beehive site", "targetYear": "2028",
+          "targetUrl": "https://www.ans.org/news/article-8462/details-emerge-on-valars-utah-plans/", "targetSource": "ANS",
+          "note": "Approved through DOE's pilot program. In July 2026 a trickle of its electricity ran a single computer chip, a demonstration rather than supply to a customer."
+        },
+        {
+          "name": "Aalo Atomics", "startup": "aalo-atomics", "project": "Aalo-X", "location": "Idaho National Laboratory",
+          "reached": 4,
+          "milestones": [
+            { "stage": 2, "date": "2026-06-25", "text": "The Energy Secretary authorized Aalo-X after DOE approved its final safety analysis.", "source": "ANS", "url": "https://www.ans.org/news/article-8178/the-deadline-arrives-checking-in-on-the-reactor-pilot-program/" },
+            { "stage": 3, "date": "2025-08-28", "text": "Broke ground at Idaho National Laboratory.", "source": "ANS", "url": "https://www.ans.org/news/article-7338/aalo-breaks-ground-in-idaho/" },
+            { "stage": 4, "date": "2026-07-04", "text": "A full-scale, zero-power version of Aalo-X went critical, on the day of DOE's deadline.", "source": "DOE", "url": "https://www.energy.gov/articles/department-energy-celebrates-fourth-criticality-ahead-july-4th-goal" }
+          ],
+          "target": "10 MW unit powering an on-site data center", "targetYear": "2027",
+          "targetUrl": "https://www.ans.org/news/article-8182/aalo-atomics-achieves-criticality-on-july-4/", "targetSource": "ANS"
+        },
+        {
+          "name": "TerraPower", "startup": "terrapower", "project": "Natrium", "location": "Kemmerer, WY",
+          "reached": 3,
+          "milestones": [
+            { "stage": 1, "date": "2024-03", "text": "Applied to the NRC for a construction permit.", "source": "World Nuclear News", "url": "https://world-nuclear-news.org/articles/nrc-issues-construction-permit-for-first-natrium-plant" },
+            { "stage": 2, "date": "2026-03-09", "text": "The NRC issued the construction permit.", "source": "TerraPower", "url": "https://www.terrapower.com/NRC-Approves-Natrium-Reactor-Construction-Permit" },
+            { "stage": 3, "date": "2026-04-23", "text": "Officially started construction of the plant.", "source": "TerraPower", "url": "https://www.terrapower.com/TerraPower-Commences-Construction-on-Americas-First-Utility-Scale-Advanced-Nuclear-Power-Plant" }
+          ],
+          "target": "Finish construction", "targetYear": "2030",
+          "targetUrl": "https://www.ans.org/news/article-7975/terrapower-begins-construction-on-natrium-power-plant-in-kemmerer/", "targetSource": "ANS",
+          "note": "Bechtel left the project in September 2026; no change to the schedule had been reported."
+        },
+        {
+          "name": "Kairos Power", "startup": "kairos-power", "project": "Hermes", "location": "Oak Ridge, TN",
+          "reached": 3,
+          "milestones": [
+            { "stage": 1, "date": "2021-09", "text": "Applied to the NRC for a construction permit.", "source": "DOE", "url": "https://www.energy.gov/node/4835953" },
+            { "stage": 2, "date": "2023-12-14", "text": "The NRC issued the construction permit.", "source": "Federal Register", "url": "https://www.govinfo.gov/content/pkg/FR-2023-12-20/html/2023-27960.htm" },
+            { "stage": 3, "date": "2025-05-01", "text": "Safety-related construction began.", "source": "World Nuclear News", "url": "https://wnn.world-nuclear.org/articles/regulator-extends-hermes-1-reactor-construction-deadline" }
+          ],
+          "target": "Finish building Hermes", "targetYear": "2028",
+          "targetUrl": "https://wnn.world-nuclear.org/articles/regulator-extends-hermes-1-reactor-construction-deadline", "targetSource": "World Nuclear News",
+          "note": "Hermes is a test reactor. Its power-producing successor, Hermes 2, broke ground in April 2026."
+        },
+        {
+          "name": "Oklo", "startup": "oklo", "project": "Aurora", "location": "Idaho National Laboratory",
+          "reached": 3,
+          "milestones": [
+            { "stage": 1, "date": "2026-03", "text": "DOE approved its nuclear safety design agreement.", "source": "ANS", "url": "https://www.ans.org/news/article-7855/oklo-provides-updates-on-doe-nrc-approvals" },
+            { "stage": 2, "date": "2026-06", "text": "DOE approved its preliminary safety analysis, the third of five approval steps.", "source": "ANS", "url": "https://www.ans.org/news/article-8119/oklo-secures-doe-pdsa-approval/" },
+            { "stage": 3, "date": "2025-09", "text": "Broke ground at Idaho National Laboratory; structural concrete and steel were in place by November 2026.", "source": "ANS", "url": "https://www.ans.org/news/article-8581/oklo-roundup-groves1-plans-centrus-contract-aurora-concrete/" }
+          ],
+          "target": "Install major reactor components", "targetYear": "2027",
+          "targetUrl": "https://www.ans.org/news/article-8581/oklo-roundup-groves1-plans-centrus-contract-aurora-concrete/", "targetSource": "ANS",
+          "note": "Approved through DOE rather than the NRC. Separately, its small Groves-1 isotope test reactor in Texas went critical in August 2026."
+        },
+        {
+          "name": "Last Energy", "startup": "last-energy", "project": "PWR-5 pilot", "location": "Bryan, TX",
+          "reached": 3,
+          "milestones": [
+            { "stage": 2, "date": "2026-05-28", "text": "DOE approved its preliminary safety analysis.", "source": "Last Energy", "url": "https://www.lastenergy.com/news-press/last-energy-receives-doe-approval-of-pwr-5-preliminary-documented-safety-analysis" },
+            { "stage": 3, "date": "2026", "text": "Construction at Texas A&M's RELLIS campus was nearing completion by May.", "source": "Last Energy", "url": "https://www.lastenergy.com/news-press/last-energy-receives-doe-approval-of-pwr-5-preliminary-documented-safety-analysis" }
+          ],
+          "target": "First criticality", "targetYear": "\"within months\"",
+          "targetUrl": "https://www.kbtx.com/2026/09/11/nuclear-reactor-rellis-could-be-running-within-months/", "targetSource": "KBTX",
+          "note": "DOE approved its final safety analysis in October 2026. It missed its summer 2026 target to go critical."
+        },
+        {
+          "name": "Radiant", "startup": "radiant", "project": "Kaleidos", "location": "Idaho National Laboratory",
+          "reached": 2,
+          "milestones": [
+            { "stage": 2, "date": "2026-10-29", "text": "DOE approved its final safety analysis.", "source": "ANS", "url": "https://www.ans.org/news/article-8549/antares-last-energy-and-radiant-hit-doe-authorization-milestones/" }
+          ],
+          "target": "60 full-power days of testing at INL", "targetYear": "no date given",
+          "targetUrl": "https://www.world-nuclear-news.org/articles/kaleidos-microreactor-begins-journey-to-idaho", "targetSource": "World Nuclear News",
+          "note": "The finished reactor left California for Idaho in August 2026. It had aimed to go critical by mid-2026."
+        },
+        {
+          "name": "X-energy", "startup": "x-energy", "project": "Long Mott", "location": "Seadrift, TX",
+          "reached": 2,
+          "milestones": [
+            { "stage": 1, "date": "2025-05", "text": "The NRC accepted its construction permit application for review.", "source": "DOE", "url": "https://www.energy.gov/node/4851244" },
+            { "stage": 2, "date": "2026-11-09", "text": "The NRC issued the construction permit for the four-reactor plant at Dow's Seadrift site.", "source": "NRC", "url": "https://www.nrc.gov/sites/default/files/cdn/doc-collection-news/2026/26-083.pdf" }
+          ],
+          "target": "Start up the plant", "targetYear": "early 2030s",
+          "targetUrl": "https://world-nuclear-news.org/articles/us-issues-landmark-construction-permit-for-texas-smr-plant", "targetSource": "World Nuclear News",
+          "note": "Dow has not yet made a final decision to invest in building it."
+        },
+        {
+          "name": "NuScale Power", "project": "First plant", "location": "Portland, OR",
+          "reached": 0,
+          "milestones": [],
+          "target": "A plant with a construction permit", "targetYear": "no date given",
+          "targetUrl": "https://www.energy.gov/ne/articles/story-behind-americas-first-potential-small-modular-reactor", "targetSource": "DOE",
+          "note": "NuScale's was the first small modular reactor design approved by the NRC (2023, with an uprated design approved in 2025), but no plant using it has a construction permit yet. The technology began at Oregon State University."
+        }
+      ]
+    }
+  ]
+}

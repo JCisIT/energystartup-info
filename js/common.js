@@ -55,7 +55,7 @@ const ES = (() => {
 
   function chrome() {
     const page = document.body.dataset.page;
-    const nav = [['dashboard', 'index.html'], ['startups', 'startups.html'], ['signals', 'signals.html']];
+    const nav = [['dashboard', 'index.html'], ['race', 'race.html'], ['startups', 'startups.html'], ['signals', 'signals.html']];
     const clock = h('span', { class: 'clock' });
     const tick = () => { clock.textContent = new Date().toISOString().slice(11, 19) + ' UTC'; };
     tick(); setInterval(tick, 1000);

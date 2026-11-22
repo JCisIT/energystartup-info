@@ -80,6 +80,16 @@ document.addEventListener('DOMContentLoaded', async () => {
         h('span', { class: 'tile-n' }, String(n).padStart(2, '0')), h('span', { class: 'tile-l' }, sec.label));
     }));
 
+    // Race teaser: one row per track with its scoreboard numbers.
+    ES.load('race').then((race) => {
+      document.getElementById('race-mini').append(...race.tracks.map((t) => {
+        const at = (k) => t.companies.filter((c) => c.reached >= k).length;
+        return h('a', { class: 'race-row', href: `race.html?track=${t.id}` },
+          h('span', { class: 'race-name' }, t.title),
+          t.tally.map((x, i) => h('span', { class: 'race-stat' }, h('b', { class: i === 0 ? 'hot' : null }, at(x.stage)), x.label)));
+      }));
+    }).catch(ES.fail);
+
     document.getElementById('counts').textContent = `${startups.length} startups · ${signals.length} signals`;
   } catch (err) { ES.fail(err); }
 });
